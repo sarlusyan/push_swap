@@ -1,15 +1,15 @@
 #include "push_swap.h"
 
-void    t_f_argv(s_stack *a, s_stack *b, int argc, char **argv)
+void    t_f_argv(s_stack *a, int argc, char **argv)
 {
     int i;
+	int j;
 
     i = 0;
+	j = 1;
 	all.count = argc - 1;
 	a->top = all.count;
-	if (!(a->arr = (int *)malloc(all.count)))
-		return ;
-	if (!(b->arr = (int *)malloc(all.count)))
+	if (!(a->arr = (int *)malloc(all.count * 4)))
 		return ;
 	while (i < argc - 1)
 	{

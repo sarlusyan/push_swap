@@ -6,16 +6,16 @@
 /*   By: lusargsy <lusargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 15:07:17 by lusargsy          #+#    #+#             */
-/*   Updated: 2021/05/28 13:58:02 by lusargsy         ###   ########.fr       */
+/*   Updated: 2021/07/01 16:05:57 by lusargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int sign;
-	int ret;
+	long sign;
+	long ret;
 
 	sign = 1;
 	ret = 0;

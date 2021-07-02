@@ -1,5 +1,14 @@
 #include "push_swap.h"
 
+void    saf2(s_stack *a)
+{
+    int i;
+
+    i = 0;
+    if (a->arr[i] > a->arr[i + 1])
+        print(sa(a, 'a'));
+}
+
 void    saf3(s_stack *a)
 {
     int i;
