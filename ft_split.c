@@ -32,13 +32,13 @@ char		**free_machine(char **s, size_t idx)
 	return (NULL);
 }
 
-char		**ft_split(char *s, char c)
+char		**ft_split(char *s, char c, s_stack *a)
 {
 	size_t		idx;
 	size_t		len;
 	size_t		word_cnt;
 	char		**words;
-
+	int			i;
 	if (!s || !(words = (char **)malloc(sizeof(char *) * (get_cnt(s, c) + 1))))
 		return (NULL);
 	word_cnt = get_cnt(s, c);
@@ -58,6 +58,15 @@ char		**ft_split(char *s, char c)
 		}
 	}
 	words[idx] = 0;
+	i = 0;
+	a->top = idx;
+	if (!(a->arr = (int *)malloc(idx * 4)))
+		return NULL;
+	while (i < (int)idx)
+	{
+		a->arr[i] = ft_atoi(words[i]);
+		i++;
+	}
 	return (words);
 }
 

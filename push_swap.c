@@ -6,7 +6,7 @@
 /*   By: lusargsy <lusargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 13:39:25 by lusargsy          #+#    #+#             */
-/*   Updated: 2021/07/02 21:09:17 by lusargsy         ###   ########.fr       */
+/*   Updated: 2021/07/04 14:07:05 by lusargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(int argc, char **argv)
 {
+	char	**s = NULL;
 	int		ac;
 	int		i;
 	int		d;
@@ -22,20 +23,43 @@ int main(int argc, char **argv)
 
 	d = 0;
 	i = 1;
+	b.top = 0;
 	ac = argc - 1;
-	if (check_is_v(argv, argc - 1))
+	int ac0 = argc;
+	
+	while (ac0--)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		s = ft_split(argv[i], ' ', &a);
+		i++;
 	}
-	t_f_argv(&a, argc, argv);
+	if (s)
+	{
+		if (check_is_v(s, argc - 1))
+		{
+			write(1, "Error\n", 6);
+			return (0);
+		}
+	}
+	else
+	{
+		if (check_is_v(argv, argc - 1))
+		{
+			write(1, "Error\n", 6);
+			return (0);
+		}
+		t_f_argv(&a, argc, argv);
+	}
 	if (is_same(&a, 0) == 2)
-	{
+	{	
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	else if (is_last(&a))
-		return (0);
+	else if (a.top == 2)
+		saf2(&a);
+	else if (a.top == 3)
+		saf3(&a);
+	else if (a.top == 5 || a.top == 4)
+		saf5(&a, &b);
 	else if (is_same(&a, 0))
  		return (0);
 	else if (n_sa(&a))
@@ -45,23 +69,10 @@ int main(int argc, char **argv)
 		print(ra(&a, 'a'));
 		return (0);
 	}
-	else if (short_n_sa(&a))
-		return (0);
 	else
 	{
 		all.r = 0;
-		if (argc - 1 == 2)
-			saf2(&a);
-		else if (argc - 1 == 3)
-			saf3(&a);
-		else if (argc - 1 == 5)
-			saf5(&a, &b);
-		else
-			wm_pb(&a, &b);
-
-		// int l = 0;
-		// while (a.top--)
-		// 	printf("%d\n", a.arr[l++]);
+		wm_pb(&a, &b);
 		return (0);
 	}
 }

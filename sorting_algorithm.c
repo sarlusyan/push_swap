@@ -111,14 +111,18 @@ void	wm_pb(s_stack *a, s_stack *b)
 			if (b->top >= 2)
 				check_b(b);
 		}
-		print(ra(a, 'a'));
+		if (a->arr[top] <= p)
+			print(rra(a, 'a'));
+		else if (a->arr[i + 1] <= p)
+			print(sa(a, 'a'));
+		else
+			print(ra(a, 'a'));
 	}
 	if (a->top > 3)
 		wm_pb(a, b);
 	else
 		saf3(a);
-	// if (b->top > 2)
-		sorting(b, a);
+	sorting(b, a);
 }
 
 void swap(int* a, int* b)
