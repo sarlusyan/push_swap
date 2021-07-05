@@ -6,7 +6,7 @@
 /*   By: lusargsy <lusargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 13:39:25 by lusargsy          #+#    #+#             */
-/*   Updated: 2021/07/04 14:07:05 by lusargsy         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:16:51 by lusargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
+	else if (is_same(&a, 0))
+		return (0);
 	else if (a.top == 2)
 		saf2(&a);
 	else if (a.top == 3)
