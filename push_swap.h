@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include  <stdio.h>
 
 struct	s_all
 {

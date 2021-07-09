@@ -6,7 +6,7 @@
 /*   By: lusargsy <lusargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 13:39:25 by lusargsy          #+#    #+#             */
-/*   Updated: 2021/07/05 17:16:51 by lusargsy         ###   ########.fr       */
+/*   Updated: 2021/07/09 09:15:19 by lusargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int main(int argc, char **argv)
 	ac = argc - 1;
 	int ac0 = argc;
 	
-	while (ac0--)
+	if (ac0 == 2)
 	{
 		s = ft_split(argv[i], ' ', &a);
-		i++;
+		if (!s[1])
+			return (0);
 	}
 	if (s)
 	{
