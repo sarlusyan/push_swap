@@ -84,5 +84,7 @@ char	*pb(s_stack *a, s_stack *b, char type)
 	}
 	a->arr = fa;
 	b->arr = fb;
+	// free(fa);
+	// free(fb);
 	return (type == 'a' ? "pa" : "pb");
 }

@@ -6,7 +6,7 @@
 /*   By: lusargsy <lusargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 13:39:25 by lusargsy          #+#    #+#             */
-/*   Updated: 2021/07/09 09:15:19 by lusargsy         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:31:28 by lusargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,27 @@ int main(int argc, char **argv)
 	if (ac0 == 2)
 	{
 		s = ft_split(argv[i], ' ', &a);
+		if (s[0][0] == '-')
+			if (s[0][1] == '0')
+			{
+				write(1, "Error\n", 6);
+				return (0);
+			}
 		if (!s[1])
 			return (0);
 	}
 	if (s)
 	{
-		if (check_is_v(s, argc - 1))
+		if (check_is_v(s, argc - 1, 0))
 		{
 			write(1, "Error\n", 6);
 			return (0);
 		}
+		free(s);
 	}
 	else
 	{
-		if (check_is_v(argv, argc - 1))
+		if (check_is_v(argv, argc - 1, 1))
 		{
 			write(1, "Error\n", 6);
 			return (0);
@@ -51,7 +58,7 @@ int main(int argc, char **argv)
 		t_f_argv(&a, argc, argv);
 	}
 	if (is_same(&a, 0) == 2)
-	{	
+	{
 		write(1, "Error\n", 6);
 		return (0);
 	}

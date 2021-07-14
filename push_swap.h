@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 struct	s_all
 {
@@ -38,7 +39,7 @@ int		partition(int arr[], int low, int high);
 void	swap(int* a, int* b);
 void	wm_pb(s_stack *a, s_stack *b);
 void	check_b(s_stack *b);
-int		check_is_v(char **av, int ac);
+int    check_is_v(char **av, int ac, int i);
 int		is_same(s_stack *a, int n);
 int		all_less(s_stack *a, int n);
 int		all_less_ra(s_stack *a, int n);

@@ -1,12 +1,9 @@
 #include "push_swap.h"
 
-int    check_is_v(char **av, int ac)
+int    check_is_v(char **av, int ac, int i)
 {
-    int	i;
 	int	j;
 
-	i = 1;
-	
 	while (i < ac + 1)
 	{
 		j = 0;
@@ -14,6 +11,9 @@ int    check_is_v(char **av, int ac)
 		{
 			if (!(av[i][j] >= '0' && av[i][j] <= '9') && av[i][j] != '-')
 				return (1);
+			if (av[i][j] == '-')
+				if (av[i][j + 1] <= '0' || av[i][j + 1] > '9')
+					return (1);
 			j++;
 		}
 		if (ft_atoi(av[i]) < -2147483648 || ft_atoi(av[i]) > 2147483647)
